@@ -1,14 +1,4 @@
-//     [TestMethod]
-//     public void GetOrderTitle_ReturnsOrderTitle_String()
-//     {
-//       string title = "test Title";
-//       string description = "test Description";
-//       int price = 99;
-//       DateTime date = new DateTime(2025, 1, 1);
-//       Orders newOrder = new Orders(title, description, price, date);
-//       string titleResult = newOrder.Title;
-//       Assert.AreEqual(title, titleResult);
-//     }
+
 
 //     [TestMethod]
 //     public void GetOrderDescription_ReturnsOrderDescription_String()
@@ -16,7 +6,7 @@
 //       string title = "test Title";
 //       string description = "test Description";
 //       int price = 99;
-//       DateTime date = new DateTime(2025, 1, 1);
+//       DateTime date = new DateTime(2023, 3, 12);
 //       Orders newOrder = new Orders(title, description, price, date);
 //       string descriptionResult = newOrder.Description;
 //       Assert.AreEqual(description, descriptionResult);
@@ -28,7 +18,7 @@
 //       string title = "test Title";
 //       string description = "test Description";
 //       int price = 99;
-//       DateTime date = new DateTime(2025, 1, 1);
+//       DateTime date = new DateTime(2023, 3, 12);
 //       Orders newOrder = new Orders(title, description, price, date);
 //       float priceResult = newOrder.Price;
 //       Assert.AreEqual(price, priceResult);

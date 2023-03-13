@@ -17,8 +17,20 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void OrdersConstructor_CreatesInstanceOfOrder_Orders()
     {
-      Orders newOrder = new Orders("test Title", "test Description", 99, new DateTime(2025, 1, 1));
+      Orders newOrder = new Orders("test Title", "test Description", 99, new DateTime(2023, 3, 12));
       Assert.AreEqual(typeof(Orders), newOrder.GetType());
+    }
+
+        [TestMethod]
+    public void GetOrderTitle_ReturnsOrderTitle_String()
+    {
+      string title = "test Title";
+      string description = "test Description";
+      int price = 99;
+      DateTime date = new DateTime(2023, 3, 12);
+      Orders newOrder = new Orders(title, description, price, date);
+      string titleResult = newOrder.Title;
+      Assert.AreEqual(title, titleResult);
     }
   }
 }
