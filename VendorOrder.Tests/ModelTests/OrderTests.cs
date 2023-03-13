@@ -17,8 +17,8 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void OrdersConstructor_CreatesInstanceOfOrder_Orders()
     {
-      Orders newOrder = new Orders("test Title", "test Description", 99, new DateTime(2023, 3, 12));
-      Assert.AreEqual(typeof(Orders), newOrder.GetType());
+      Orders order = new Orders("test Title", "test Description", 99, new DateTime(2023, 3, 12));
+      Assert.AreEqual(typeof(Orders), order.GetType());
     }
 
         [TestMethod]
@@ -28,8 +28,8 @@ namespace VendorOrder.Tests
       string description = "test Description";
       int price = 99;
       DateTime date = new DateTime(2023, 3, 12);
-      Orders newOrder = new Orders(title, description, price, date);
-      string result = newOrder.Title;
+      Orders order = new Orders(title, description, price, date);
+      string result = order.Title;
       Assert.AreEqual(title, result);
     }
 
@@ -40,8 +40,8 @@ namespace VendorOrder.Tests
       string description = "test Description";
       int price = 99;
       DateTime date = new DateTime(2023, 3, 12);
-      Orders newOrder = new Orders(title, description, price, date);
-      string result = newOrder.Description;
+      Orders order = new Orders(title, description, price, date);
+      string result = order.Description;
       Assert.AreEqual(description, result);
     }
 
@@ -52,8 +52,8 @@ namespace VendorOrder.Tests
       string description = "test Description";
       int price = 99;
       DateTime date = new DateTime(2023, 3, 12);
-      Orders newOrder = new Orders(title, description, price, date);
-      float result = newOrder.Price;
+      Orders order = new Orders(title, description, price, date);
+      float result = order.Price;
       Assert.AreEqual(price, result);
     }
 
@@ -64,9 +64,41 @@ namespace VendorOrder.Tests
       string description = "test Description";
       int price = 99;
       DateTime date = new DateTime(2023, 3, 12);
-      Orders newOrder = new Orders(title, description, price, date);
-      DateTime result = newOrder.Date;
+      Orders order = new Orders(title, description, price, date);
+      DateTime result = order.Date;
       Assert.AreEqual(date, result);
+    }
+
+        [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string title = "test Title";
+      string description = "test Description";
+      int price = 99;
+      DateTime date = new DateTime(2025, 1, 1);
+      Orders order1 = new Orders(title, description, price, date);
+      Orders order2 = new Orders(title, description, price, date);
+      int result = order2.Id;
+      Assert.AreEqual(2, result);
+    }
+
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrdersList()
+    {
+      string title1 = "test1 Title";
+      string description1 = "test1 Description";
+      int price1 = 99;
+      DateTime date1 = new DateTime(2023, 3, 12);
+      string title2 = "test2 Title";
+      string description2 = "test2 Description";
+      int price2 = 101;
+      DateTime date2 = new DateTime(2023, 3, 12);
+      Orders orderr1 = new Orders(title1, description1, price1, date1);
+      Orders order2 = new Orders(title2, description2, price2, date2);
+      List<Orders> orderList = new List<Orders> { order1, order2 };
+      List<Orders> result = Orders.GetAll();
+      CollectionAssert.AreEqual(orderList, result);
     }
   }
 }
