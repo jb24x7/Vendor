@@ -29,8 +29,8 @@ namespace VendorOrder.Tests
       int price = 99;
       DateTime date = new DateTime(2023, 3, 12);
       Orders newOrder = new Orders(title, description, price, date);
-      string titleResult = newOrder.Title;
-      Assert.AreEqual(title, titleResult);
+      string result = newOrder.Title;
+      Assert.AreEqual(title, result);
     }
 
         [TestMethod]
@@ -41,8 +41,20 @@ namespace VendorOrder.Tests
       int price = 99;
       DateTime date = new DateTime(2023, 3, 12);
       Orders newOrder = new Orders(title, description, price, date);
-      string descriptionResult = newOrder.Description;
-      Assert.AreEqual(description, descriptionResult);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
+    }
+
+        [TestMethod]
+    public void GetOrderPrice_ReturnsOrderPrice_String()
+    {
+      string title = "test Title";
+      string description = "test Description";
+      int price = 99;
+      DateTime date = new DateTime(2023, 3, 12);
+      Orders newOrder = new Orders(title, description, price, date);
+      float result = newOrder.Price;
+      Assert.AreEqual(price, result);
     }
   }
 }
