@@ -70,7 +70,7 @@ namespace VendorOrder.Tests
     }
 
         [TestMethod]
-    public void GetId_ReturnsVendorId_Int()
+    public void GetId_ReturnsOrderId_Int()
     {
       string title = "test Title";
       string description = "test Description";
@@ -94,7 +94,7 @@ namespace VendorOrder.Tests
       string description2 = "test2 Description";
       int price2 = 101;
       DateTime date2 = new DateTime(2023, 3, 12);
-      Orders orderr1 = new Orders(title1, description1, price1, date1);
+      Orders order1 = new Orders(title1, description1, price1, date1);
       Orders order2 = new Orders(title2, description2, price2, date2);
       List<Orders> orderList = new List<Orders> { order1, order2 };
       List<Orders> result = Orders.GetAll();
