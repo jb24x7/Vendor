@@ -56,5 +56,17 @@ namespace VendorOrder.Tests
       float result = newOrder.Price;
       Assert.AreEqual(price, result);
     }
+
+        [TestMethod]
+    public void GetOrderDate_ReturnsOrderDate_DateTime()
+    {
+      string title = "test Title";
+      string description = "test Description";
+      int price = 99;
+      DateTime date = new DateTime(2023, 3, 12);
+      Orders newOrder = new Orders(title, description, price, date);
+      DateTime result = newOrder.Date;
+      Assert.AreEqual(date, result);
+    }
   }
 }
